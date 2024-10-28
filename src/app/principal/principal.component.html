@@ -1,0 +1,39 @@
+<div *ngIf="ultimoUsuario">
+    <h2>Hello {{ ultimoUsuario.nombres }} {{ ultimoUsuario.apellidos }}</h2>
+    
+    <h3>Datos del Último Usuario Registrado</h3>
+    <div>
+      <label>Nombres:</label>
+      <p>{{ ultimoUsuario.nombres }}</p>
+    </div>
+  
+    <div>
+      <label>Apellidos:</label>
+      <p>{{ ultimoUsuario.apellidos }}</p>
+    </div>
+  
+    <div>
+      <label>Identificación:</label>
+      <p>{{ ultimoUsuario.identificacion }}</p>
+    </div>
+  
+    <div>
+      <label>Fecha de Nacimiento:</label>
+      <p>{{ ultimoUsuario.fechaNacimiento }}</p>
+    </div>
+  
+    <div>
+      <label>Género:</label>
+      <p>{{ ultimoUsuario.genero }}</p>
+    </div>
+  
+    <div>
+      <label>País:</label>
+      <p>{{ ultimoUsuario.pais }}</p>
+    </div>
+  </div>
+  
+  <div *ngIf="!ultimoUsuario">
+    <p>No hay usuarios registrados todavía.</p>
+  </div>
+  

@@ -1,0 +1,18 @@
+div {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    color: #495057;
+  }
+  
+  p {
+    margin: 0;
+    padding: 8px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    color: #333;
+  }
+  

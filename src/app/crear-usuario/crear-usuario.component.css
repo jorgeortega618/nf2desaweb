@@ -1,0 +1,99 @@
+/* Contenedor principal del formulario */
+form {
+    max-width: 500px; /* Establece un ancho máximo */
+    margin: 0 auto; /* Centra el formulario */
+    padding: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo de cada campo del formulario */
+  form div {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Estilo para etiquetas */
+  label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #495057;
+  }
+  
+  /* Estilo de los campos de entrada y selección */
+  input[type="text"],
+  input[type="date"],
+  select {
+    padding: 10px;
+    font-size: 1rem;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  input[type="text"]:focus,
+  input[type="date"]:focus,
+  select:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Botón de envío */
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  /* Mensaje de éxito */
+  .success-message {
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  /* Estilo de los mensajes de error */
+  small {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Diseño responsivo para pantallas pequeñas */
+  @media (max-width: 576px) {
+    form {
+      padding: 15px;
+    }
+  
+    button {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  

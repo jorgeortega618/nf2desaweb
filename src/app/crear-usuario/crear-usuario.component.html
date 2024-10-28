@@ -1,0 +1,78 @@
+<h2>Crear Usuario</h2>
+<form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+  <!-- Campo Nombres -->
+  <div>
+    <label for="nombres">Nombres:</label>
+    <input id="nombres" formControlName="nombres" />
+    <div *ngIf="usuarioForm.get('nombres')?.invalid && usuarioForm.get('nombres')?.touched">
+      <small *ngIf="usuarioForm.get('nombres')?.errors?.['required']">El campo Nombres es obligatorio.</small>
+    </div>
+  </div>
+
+  <!-- Campo Apellidos -->
+  <div>
+    <label for="apellidos">Apellidos:</label>
+    <input id="apellidos" formControlName="apellidos" />
+    <div *ngIf="usuarioForm.get('apellidos')?.invalid && usuarioForm.get('apellidos')?.touched">
+      <small *ngIf="usuarioForm.get('apellidos')?.errors?.['required']">El campo Apellidos es obligatorio.</small>
+    </div>
+  </div>
+
+  <!-- Campo Identificación -->
+  <div>
+    <label for="identificacion">Identificación:</label>
+    <input id="identificacion" formControlName="identificacion" maxlength="10" />
+    <div *ngIf="usuarioForm.get('identificacion')?.invalid && usuarioForm.get('identificacion')?.touched">
+      <small *ngIf="usuarioForm.get('identificacion')?.errors?.['required']">El campo Identificación es obligatorio.</small>
+      <small *ngIf="usuarioForm.get('identificacion')?.errors?.['pattern']">La identificación solo debe contener números.</small>
+      <small *ngIf="usuarioForm.get('identificacion')?.errors?.['maxlength']">La identificación no debe tener más de 10 caracteres.</small>
+    </div>
+  </div>
+
+  <!-- Campo Fecha de Nacimiento -->
+  <div>
+    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+    <input type="date" id="fechaNacimiento" formControlName="fechaNacimiento" />
+    <div *ngIf="usuarioForm.get('fechaNacimiento')?.invalid && usuarioForm.get('fechaNacimiento')?.touched">
+      <small *ngIf="usuarioForm.get('fechaNacimiento')?.errors?.['required']">El campo Fecha de Nacimiento es obligatorio.</small>
+    </div>
+  </div>
+
+  <!-- Campo Género -->
+  <div>
+    <label for="genero">Género:</label>
+    <select id="genero" formControlName="genero">
+      <option value="">Seleccione...</option>
+      <option value="masculino">Masculino</option>
+      <option value="femenino">Femenino</option>
+      <option value="otro">Otro</option>
+    </select>
+    <div *ngIf="usuarioForm.get('genero')?.invalid && usuarioForm.get('genero')?.touched">
+      <small *ngIf="usuarioForm.get('genero')?.errors?.['required']">El campo Género es obligatorio.</small>
+    </div>
+  </div>
+
+  <!-- Campo País -->
+  <div>
+    <label for="pais">País:</label>
+    <select id="pais" formControlName="pais">
+      <option value="">Seleccione...</option>
+      <option value="colombia">Colombia</option>
+      <option value="mexico">México</option>
+      <option value="argentina">Argentina</option>
+      <option value="chile">Chile</option>
+      <!-- Agrega más países si es necesario -->
+    </select>
+    <div *ngIf="usuarioForm.get('pais')?.invalid && usuarioForm.get('pais')?.touched">
+      <small *ngIf="usuarioForm.get('pais')?.errors?.['required']">El campo País es obligatorio.</small>
+    </div>
+  </div>
+
+  <!-- Botón Enviar -->
+  <button type="submit" [disabled]="usuarioForm.invalid">Enviar</button>
+</form>
+
+<!-- Mensaje de éxito -->
+<div *ngIf="enviado && usuarioForm.valid" class="success-message">
+  Formulario enviado exitosamente
+</div>

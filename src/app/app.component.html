@@ -1,0 +1,19 @@
+<header>
+  <h1>Formativa 2 de Desarrollo Web - Por: Jorge Ortega</h1>
+</header>
+
+<div class="menu" [class.open]="menuAbierto">
+  <h2>Menú</h2>
+  <nav>
+    <a routerLink="/" routerLinkActive="active" (click)="cerrarMenu()">Principal</a>
+    <a routerLink="/lista-usuarios" routerLinkActive="active" (click)="cerrarMenu()">Lista de Usuarios</a>
+    <a routerLink="/crear-usuario" routerLinkActive="active" (click)="cerrarMenu()">Crear Usuario</a>
+  </nav>
+</div>
+
+<!-- Botón de menú para dispositivos móviles -->
+<button class="menu-toggle" (click)="toggleMenu()">☰</button>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
